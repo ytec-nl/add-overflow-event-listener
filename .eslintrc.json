@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "tsconfigRootDir": "./",
+    "project": ["./website/project/tsconfig.json"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["**/*.js"],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-underscore-dangle": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true }
+    ],
+    "import/extensions": "off", // Should be fine-tuned in the future
+    "import/order": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "warn",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "lines-between-class-members": "off",
+    "no-new": "off",
+    "no-void": "off",
+    "no-plusplus": "off",
+    "no-console": "off",
+    "class-methods-use-this": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-unused-expressions": ["error", { "allowTernary": true }]
+  }
+}
